@@ -37,4 +37,15 @@ public class NotificationController {
 
         return ResponseEntity.ok(notifications.stream().map(DtoMapper::from).toList());
     }
+
+    @GetMapping("/say-hello")
+    public ResponseEntity<String> sayHello() {
+        return ResponseEntity.ok("Hello World!");
+    }
+
+    @GetMapping("/say-hello2")
+    public ResponseEntity<String> sayHello2(@RequestParam String name) {
+        return ResponseEntity.ok("Hello " + name + "!");
+    }
 }
+
